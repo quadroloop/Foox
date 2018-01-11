@@ -9,4 +9,4 @@ Validator](https://img.shields.io/swagger/valid/2.0/https/raw.githubusercontent.
 ### Collaborators:
 
 > __aerborne__  - https://github.com/aerborne
-> __quadroloop__ - htt[s://github.com/quadroloop
+> __quadroloop__ - https://github.com/quadroloop
