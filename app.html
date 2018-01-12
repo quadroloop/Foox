@@ -4,7 +4,6 @@
 <link rel="stylesheet" href="./css/foox.css">
 <title>Accelerometer Javascript Test</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-
 <style>
 body {
 	font-family: helvetica, arial, sans serif;
@@ -23,7 +22,7 @@ body {
 <body id="vbody">
 
 
-<div id="container-floating">
+<div id="container-floating"  onclick="ui_counter();">
 
   <div class="nd5 nds" data-toggle="tooltip" data-placement="left" data-original-title="Simone"></div>
   <div class="nd4 nds" data-toggle="tooltip" data-placement="left" data-original-title="contract@gmail.com"><img class="reminder">
@@ -34,8 +33,8 @@ body {
     <p class="letter">E</p>
   </div>
 
-  <div id="floating-button" data-toggle="tooltip" data-placement="left" data-original-title="Create" onclick="newmail()">
-    <p class="plus">+</p>
+  <div id="floating-button" data-toggle="tooltip" data-placement="left" data-original-title="Create">
+    <p class="plus"><strong>&Xi;</strong></p>
     <img class="edit" src="https://ssl.gstatic.com/bt/C3341AA7A1A076756462EE2E5CD71C11/1x/bt_compose2_1x.png">
   </div>
 
@@ -46,6 +45,16 @@ body {
     <h1>Accelerometer Javascript Test</h1>
 
 <script type="text/javascript">
+
+var btn_counter = 0;
+
+function ui_counter() {
+   btn_counter ++;
+   if(btn_counter == 2) {	
+   this.blur();
+   btn_counter = 0;
+}
+}
 
 var x = 0, y = 0,
     vx = 0, vy = 0,
