@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<link rel="stylesheet" href="./css/foox.css">
 <title>Accelerometer Javascript Test</title>
-<meta name="viewport" content="width=device-width,user-scalable=yes" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+
 <style>
 body {
 	font-family: helvetica, arial, sans serif;
@@ -19,19 +21,30 @@ body {
 </head>
 
 <body id="vbody">
+
+
+<div id="container-floating">
+
+  <div class="nd5 nds" data-toggle="tooltip" data-placement="left" data-original-title="Simone"></div>
+  <div class="nd4 nds" data-toggle="tooltip" data-placement="left" data-original-title="contract@gmail.com"><img class="reminder">
+    <p class="letter">C</p>
+  </div>
+  <div class="nd3 nds" data-toggle="tooltip" data-placement="left" data-original-title="Reminder"><img class="reminder" src="//ssl.gstatic.com/bt/C3341AA7A1A076756462EE2E5CD71C11/1x/ic_reminders_speeddial_white_24dp.png" /></div>
+  <div class="nd1 nds" data-toggle="tooltip" data-placement="left" data-original-title="Edoardo@live.it"><img class="reminder">
+    <p class="letter">E</p>
+  </div>
+
+  <div id="floating-button" data-toggle="tooltip" data-placement="left" data-original-title="Create" onclick="newmail()">
+    <p class="plus">+</p>
+    <img class="edit" src="https://ssl.gstatic.com/bt/C3341AA7A1A076756462EE2E5CD71C11/1x/bt_compose2_1x.png">
+  </div>
+
+</div>
+
+
 <div id="content">
     <h1>Accelerometer Javascript Test</h1>
-<ul>
-	<li>acceleration x: <span id="accelerationX"></span>g</li>
-	<li>acceleration y: <span id="accelerationY" onclick="alert('fuck')"></span>g</li>
-	<li>acceleration z: <span id="accelerationZ"></span>g</li>
-	<li>rotation alpha: <span id="rotationAlpha"></span>degree</li>
-	<li>rotation beta: <span id="rotationBeta"></span>degree</li>
-	<li>rotation gamma: <span id="rotationGamma"></span>degree</li>
-</ul>
 
-test: <span id="test"></span>
-</div>
 <script type="text/javascript">
 
 var x = 0, y = 0,
@@ -49,15 +62,7 @@ if (window.DeviceMotionEvent != undefined) {
 		}else{
 			document.body.style = "background-color:red";
 		}
-		document.getElementById("accelerationX").innerHTML = e.accelerationIncludingGravity.x;
-		document.getElementById("accelerationY").innerHTML = e.accelerationIncludingGravity.y;
-		document.getElementById("accelerationZ").innerHTML = e.accelerationIncludingGravity.z;
-
-		if ( e.rotationRate ) {
-			document.getElementById("rotationAlpha").innerHTML = e.rotationRate.alpha;
-			document.getElementById("rotationBeta").innerHTML = e.rotationRate.beta;
-			document.getElementById("rotationGamma").innerHTML = e.rotationRate.gamma;
-		}		
+		
 	}
 
 
