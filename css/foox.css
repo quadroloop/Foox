@@ -7,11 +7,6 @@ body {
 	padding: 0;
 }
 
-#bg1 {
-	background: linear-gradient(rgba(16, 142, 238, 0.92), #fff), url("../img/fbg-2.gif") fixed center center;
-  background-size: cover;
-  padding: 80px 0 60px 0;
-}
 
 .logo {
     width: 100%;
@@ -175,7 +170,6 @@ body {
 }
 
 .nd5{
-  background-image: url('https://lh3.googleusercontent.com/-X-aQXHatDQY/Uy86XLOyEdI/AAAAAAAAAF0/TBEZvkCnLVE/w140-h140-p/fb3a11ae-1fb4-4c31-b2b9-bf0cfa835c27');
   background-size: 100%;
   right: 40px;
   bottom: 300px;

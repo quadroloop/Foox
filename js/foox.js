@@ -1,6 +1,13 @@
 /*foox main js file*/
 
-var color_pick = ["lightblue","lightgreen","lightred"]
+var bgcolor_pick = [
+    "lightblue",
+    "rgba(176, 235, 49, 0.96)",
+    "rgba(239, 61, 64, 0.81)",
+    "rgba(239, 215, 61, 0.9)",
+    "rgba(239, 135, 61, 0.82)",
+    "rgba(183, 61, 239, 0.58)"
+    ];
 
 var food_icons = [
 "apple.png",
@@ -45,17 +52,31 @@ var food_icons = [
 "hotdog.png ",
 "popsicle.png",
 ];
+
+var selection = [];
+
 window.onload = function() {
+
 	//load all icons in the screen
 	for(var i = 0; i < food_icons.length; i++) {
-		document.getElementById('food_thread').innerHTML += '<a><img src="./img/'+food_icons[i]+'" style="width:50px;margin:10px;" onclick="img_res(this);"></a>';
+		document.getElementById('food_thread').innerHTML += '<a><img src="./img/'+food_icons[i]+'" name="'+food_icons[i]+'" style="width:50px;margin:10px;" onclick="img_res(this);"></a>';		
 	}
 } 
 
 
 function img_res(img_data) {
+   if(selection.indexOf(img_data.name) > -1) {
+   img_data.className = "animated shake";
+   img_data.style = "width:50px;margin:10px;";
+   selection.splice(img_data.name);
+   document.getElementById("unselect").play();
+   }else{
    img_data.className = "animated bounceIn";
-   img_data.style = "width:80px;margin:10px;border-radius:10px; background-color:lightblue;padding:10px;";
+   img_data.style = "width:60px;margin:10px;border-radius:10px; background-color:"+bgcolor_pick[Math.floor(Math.random() * (bgcolor_pick.length - 1 + 1))]+";padding:10px;";
+   selection.push(img_data.name);
+   document.getElementById("select").play();
+
+   }
 }
 
 var btn_counter = 0;
