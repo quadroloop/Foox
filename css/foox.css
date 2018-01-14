@@ -47,7 +47,7 @@ body {
   width: 55px;
   height: 55px;
   border-radius: 50%;
-  background: #db4437;
+  background: blue;
   position: fixed;
   bottom: 30px;
   right: 30px;
@@ -80,7 +80,7 @@ body {
   height: 70px;
   bottom: 30px;
   right: 30px;
-  z-index: 50px;
+  z-index: 1000;
 }
 
 #container-floating:hover{
