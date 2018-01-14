@@ -1,5 +1,7 @@
 /*foox main js file*/
 
+var shake = 0;
+
 var bgcolor_pick = [
     "lightblue",
     "rgba(176, 235, 49, 0.96)",
@@ -102,7 +104,10 @@ if (window.DeviceMotionEvent != undefined) {
 		if ( ay > 50  && ax > 20 || ax > -20) { // shaking algo
 			document.body.style  = "background-color:#fff";
 		}else{
-			document.body.style = "background-color:lightblue";
+			// if shaking call function!
+			//document.body.style = "background-color:lightblue";
+			shake++;
+            shake_request();
 		}
 		
 	}
@@ -125,5 +130,19 @@ if (window.DeviceMotionEvent != undefined) {
 	}, 2000);
 } 
 
+
+ function shake_request() {
+     if(shake == 20 && selection.length > 0) {
+     	document.getElementById('food_thread').style.display="none";
+     	for(var i=0;i < selection.length;i++) {
+     	   var item = selection[i].replace('.png','');
+     	  document.getElementById('output_res').innerHTML+='<h3 style="color:blue">'+item+'</h3>';
+
+     	}
+     	}else{
+     	  setTimeout("shake=0;",1000);	
+     	}
+     	document.getElementById('output_res').style.display="block";
+     }
 
  
