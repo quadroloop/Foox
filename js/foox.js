@@ -61,16 +61,19 @@ window.onload = function() {
 
 	//load all icons in the screen
 	for(var i = 0; i < food_icons.length; i++) {
-		document.getElementById('food_thread').innerHTML += '<a><img src="./img/'+food_icons[i]+'" name="'+food_icons[i]+'" style="width:50px;margin:10px;" onclick="img_res(this);"></a>';		
+		document.getElementById('food_thread').innerHTML += '<a><img src="./img/'+food_icons[i]+'" name="'+food_icons[i]+'" style="width:50px;margin:10px;" onclick="img_res(this);"></a>';
 	}
-} 
+}
 
 
 function img_res(img_data) {
    if(selection.indexOf(img_data.name) > -1) {
    img_data.className = "animated shake";
    img_data.style = "width:50px;margin:10px;";
-   selection.splice(img_data.name);
+   var rem_item = selection.indexOf(img_data.name);
+   if(rem_item > -1) {
+   selection.splice(rem_item,1);
+ }
    document.getElementById("unselect").play();
    }else{
    img_data.className = "animated bounceIn";
@@ -85,7 +88,7 @@ var btn_counter = 0;
 
 function ui_counter() {
    btn_counter ++;
-   if(btn_counter == 2) {	
+   if(btn_counter == 2) {
    this.blur();
    btn_counter = 0;
 }
@@ -94,7 +97,7 @@ function ui_counter() {
 var x = 0, y = 0,
     vx = 0, vy = 0,
 	ax = 0, ay = 0;
-	
+
 
 if (window.DeviceMotionEvent != undefined) {
 	window.ondevicemotion = function(e) {
@@ -109,7 +112,7 @@ if (window.DeviceMotionEvent != undefined) {
 			shake++;
             shake_request();
 		}
-		
+
 	}
 
 
@@ -126,9 +129,9 @@ if (window.DeviceMotionEvent != undefined) {
 		vy = vy * 0.98;
 		y = parseInt(y + vy / 50);
 		x = parseInt(x + vx / 50);
-		
+
 	}, 2000);
-} 
+}
 
 
  function shake_request() {
@@ -140,9 +143,7 @@ if (window.DeviceMotionEvent != undefined) {
 
      	}
      	}else{
-     	  setTimeout("shake=0;",1000);	
+     	  setTimeout("shake=0;",1000);
      	}
      	document.getElementById('output_res').style.display="block";
      }
-
- 
