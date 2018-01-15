@@ -1,4 +1,4 @@
-# Fook-Food-Recommendation-App
+# Foox
 [![Swagger Validator](https://img.shields.io/swagger/valid/2.0/https/raw.githubusercontent.com/OAI/OpenAPI-Specification/master/examples/v2.0/json/petstore-expanded.json.svg)]() [![Travis](https://img.shields.io/travis/rust-lang/rust.svg)]()
 ## foox 
 > a not so cool food recommendation app.
